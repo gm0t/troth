@@ -1,0 +1,16 @@
+{
+  "name": "troth",
+  "version": "0.0.1",
+  "description": "Yet another Promises/A+ implementation",
+  "main": "troth",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "promises",
+    "defer",
+    "deferred"
+  ],
+  "author": "Bogdanov Mikhail <admin@gm0t.ru>",
+  "license": "MIT"
+}
