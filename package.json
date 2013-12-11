@@ -11,6 +11,9 @@
     "defer",
     "deferred"
   ],
+  "devDependencies": {
+    "promises-aplus-tests": "*"
+  },
   "author": "Bogdanov Mikhail <admin@gm0t.ru>",
   "license": "MIT"
 }
