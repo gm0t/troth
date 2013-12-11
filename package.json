@@ -4,7 +4,7 @@
   "description": "Yet another Promises/A+ implementation",
   "main": "troth",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/promises-aplus-tests/lib/cli.js troth.js  --reporter spec"
   },
   "keywords": [
     "promises",

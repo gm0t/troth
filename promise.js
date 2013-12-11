@@ -30,7 +30,7 @@ function Promise() {
 
 function compatibleResolve(x, then, onFulfilled, onRejected) {
   var done = false;
-  var once = function (cb, n) {
+  var once = function (cb) {
     return function () {
       if (done) {
         return;
@@ -40,8 +40,8 @@ function compatibleResolve(x, then, onFulfilled, onRejected) {
     };
   };
 
-  onFulfilled = once(onFulfilled, 'f');
-  onRejected = once(onRejected, 'r');
+  onFulfilled = once(onFulfilled);
+  onRejected = once(onRejected);
 
   try {
     then.call(x, onFulfilled, onRejected);
@@ -64,13 +64,15 @@ function resolve(promise, x) {
   }
 
   var then;
+  var xType = typeof x;
+
   try {
     then = x ? x.then : null;
   } catch (e) {
     return promise.$reject(e);
   }
 
-  if (typeof then === 'function') {
+  if (typeof then === 'function' && (xType === 'object' || xType === 'function') ) {
     return compatibleResolve(x, then, resolveWithY, promise.$reject);
   }
 
